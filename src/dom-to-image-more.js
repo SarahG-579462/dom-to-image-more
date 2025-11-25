@@ -6,10 +6,10 @@
     const fontFaces = newFontFaces();
     const images = newImages();
     const offscreen = {
-        position: "fixed",
-        left: "-9999px",
-        visibility: "hidden",
-    }
+        position: 'fixed',
+        left: '-9999px',
+        visibility: 'hidden',
+    };
     // Default impl options
     const defaultOptions = {
         // Default is to copy default styles of elements
@@ -48,7 +48,7 @@
             inliner: inliner,
             urlCache: [],
             options: {},
-            copyOptions: copyOptions
+            copyOptions: copyOptions,
         },
     };
 
@@ -474,8 +474,7 @@
                 });
 
             function fixResponsiveImages() {
-                if (util.isHTMLImageElement(clone))
-                {
+                if (util.isHTMLImageElement(clone)) {
                     // Remove lazy-loading and responsive attributes
                     clone.removeAttribute('loading');
 
@@ -844,7 +843,7 @@
                 };
 
                 svg.appendChild(image);
-                svg.style = {...svg.style, ...offscreen};
+                svg.style = { ...svg.style, ...offscreen };
                 image.src = uri;
 
                 // Add the SVG to the document body (invisible)
@@ -882,7 +881,8 @@
                             const status = xhr.status;
                             // In local files, status is 0 upon success in Mozilla Firefox
                             if (
-                                (status === 0 && url.toLowerCase().startsWith('file://')) ||
+                                (status === 0 &&
+                                    url.toLowerCase().startsWith('file://')) ||
                                 (status >= 200 && status <= 300 && xhr.response !== null)
                             ) {
                                 const response = xhr.response;
@@ -922,7 +922,12 @@
                         if (placeholder) {
                             resolve(placeholder);
                         } else {
-                            fail('Status:' + xhr.status + ' while fetching resource: ' + url);
+                            fail(
+                                'Status:' +
+                                    xhr.status +
+                                    ' while fetching resource: ' +
+                                    url
+                            );
                         }
                     }
 

@@ -474,7 +474,8 @@
                 });
 
             function fixResponsiveImages() {
-                if (util.isHTMLImageElement(clone)) {
+                if (util.isHTMLImageElement(clone))
+                    {
                     // Remove lazy-loading and responsive attributes
                     clone.removeAttribute('loading');
 
@@ -881,8 +882,7 @@
                             const status = xhr.status;
                             // In local files, status is 0 upon success in Mozilla Firefox
                             if (
-                                (status === 0 &&
-                                    url.toLowerCase().startsWith('file://')) ||
+                                (status === 0 && url.toLowerCase().startsWith('file://')) ||
                                 (status >= 200 && status <= 300 && xhr.response !== null)
                             ) {
                                 const response = xhr.response;
@@ -922,12 +922,7 @@
                         if (placeholder) {
                             resolve(placeholder);
                         } else {
-                            fail(
-                                'Status:' +
-                                    xhr.status +
-                                    ' while fetching resource: ' +
-                                    url
-                            );
+                            fail('Status:' + xhr.status + ' while fetching resource: ' + url);
                         }
                     }
 

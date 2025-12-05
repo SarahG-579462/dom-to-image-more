@@ -48,7 +48,7 @@
             inliner: inliner,
             urlCache: [],
             options: {},
-            copyOptions: copyOptions,
+            copyOptions: copyOptions
         },
     };
 
@@ -475,7 +475,7 @@
 
             function fixResponsiveImages() {
                 if (util.isHTMLImageElement(clone))
-                    {
+                {
                     // Remove lazy-loading and responsive attributes
                     clone.removeAttribute('loading');
 
